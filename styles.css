@@ -156,7 +156,7 @@ header h2 {
 .section-about,
 .section-skill,
 .section-proj,
-.section-tools ,
+.section-tools,
 .section-contact {
   padding: 50px;
   background-color: rgb(25, 25, 66);
@@ -213,9 +213,7 @@ header h2 {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  
 }
-
 
 h4 {
   font-size: 24px;
@@ -229,7 +227,9 @@ h4 {
   padding: 20px;
   margin: 15px 0;
   border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .project-card:hover {
@@ -243,7 +243,6 @@ h4 {
   align-items: center;
   justify-content: space-around;
   width: 100%;
-
 }
 
 .project-info {
@@ -258,14 +257,15 @@ h4 {
   object-fit: cover;
   border-radius: 8px;
   flex-shrink: 0;
-  transition: transform 0.3s, filter 0.3s ease;
+  transition:
+    transform 0.3s,
+    filter 0.3s ease;
 }
 
 .project-card img:hover {
   transform: scale(1.05);
   filter: blur(5px);
 }
-
 
 .tags {
   font-size: 14px;
@@ -276,7 +276,6 @@ h4 {
   text-decoration: none;
   color: lavender;
 }
-
 
 /* Tools */
 .section-tools {
@@ -298,7 +297,8 @@ h4 {
 .track-wrapper::after {
   content: "";
   position: absolute;
-  top: 0; bottom: 0;
+  top: 0;
+  bottom: 0;
   width: 60px;
   z-index: 2;
   pointer-events: none;
@@ -326,8 +326,12 @@ h4 {
 }
 
 @keyframes scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .tool-chip {
@@ -437,7 +441,7 @@ footer .socials a {
   width: 30px;
   height: auto;
   filter: invert(1) sepia(1) saturate(5) hue-rotate(230deg);
-  transition: fill 0.3s ease;
+  transition: filter 0.3s ease;
 }
 
 .logo path:hover {
@@ -446,7 +450,6 @@ footer .socials a {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-
   .s1 {
     flex-direction: column;
     text-align: center;
@@ -456,7 +459,7 @@ footer .socials a {
 
   .right-s1 img {
     margin: 20px 0;
-    margin-right: 0;        /* removes the 100px right margin */
+    margin-right: 0; /* removes the 100px right margin */
   }
 
   .buttons1 {
@@ -466,25 +469,25 @@ footer .socials a {
   }
 
   .left-s1 {
-    padding-left: 0;        /* removes left offset when centered */
+    padding-left: 0; /* removes left offset when centered */
   }
 }
 
 @media (max-width: 768px) {
   .project-card {
     flex-direction: column;
-    align-items: center;    /* centers both text and image */
+    align-items: center; /* centers both text and image */
   }
 
   .project-card a.click {
     flex-direction: column;
-    align-items: center;    /* centers the link content too */
+    align-items: center; /* centers the link content too */
     width: 100%;
   }
 
   .project-info {
-    text-align: center;     /* centers the title, description, tags */
-    padding-right: 0;       /* removes the desktop right padding */
+    text-align: center; /* centers the title, description, tags */
+    padding-right: 0; /* removes the desktop right padding */
     padding-bottom: 10px;
   }
 
@@ -496,6 +499,28 @@ footer .socials a {
 }
 
 @media (max-width: 480px) {
+  header {
+    flex-direction: column; /* stack name and nav vertically */
+    padding: 10px 0;
+  }
+
+  header h2 {
+    padding: 10px; /* reduce the 20px padding */
+    font-size: 18px; /* shrink the name text */
+  }
+
+  .right {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 0 10px 0;
+    gap: 6px;
+  }
+
+  .right a {
+    padding: 6px 8px; /* smaller nav buttons */
+    font-size: 13px;
+  }
+
   .left-s1 h4 {
     font-size: 28px;
   }
