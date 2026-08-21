@@ -41,6 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Microsoft Office",            color: "rgb(154, 93, 211)" },
     { name: "Claude",    color: "rgb(183, 130, 233)" },
     { name: "MySQL",          color: "limegreen" },
+    { name: "Tavily",          color: "rgb(154, 93, 211)" },
+    { name: "Groq",      color: "aqua" },
+    { name: "LLM",      color: "rgb(183, 130, 233)" },
+    { name: "Manual Testing",           color: "limegreen" },
   ];
 
   const track = document.getElementById("toolTrack");
