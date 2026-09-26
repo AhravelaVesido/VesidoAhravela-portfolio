@@ -8,21 +8,45 @@
     
 </head>
 <body>
+    <!-- Welcome Popup -->
+    <div class="modal-overlay" id="welcomeModal">
+        <div class="modal-box">
+            <button class="modal-close" id="modalClose" aria-label="Close welcome message">&times;</button>
+            <h3>Welcome! 👋</h3>
+            <p>Thanks for stopping by. I'm Ahravela — a licensed Electronics Engineer building AI, IoT, and web projects. Feel free to look around, and reach out if you'd like to connect.</p>
+            <button class="modal-cta" id="modalCta">Get Started</button>
+        </div>
+    </div>
+
     <header>
-        <h2>Ahravela D. Vesido</h2>
-        <nav class="right">
+        <div class="brand">
+            <div class="brand-mark">AV</div>
+            <div class="brand-text">
+                <h2>Ahravela D. Vesido</h2>
+                <span class="brand-tag">Electronics Engineer & Developer</span>
+            </div>
+        </div>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="right" id="navMenu">
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#tools">Tools</a>
+            <a href="#certifications">Certifications</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
+    <div class="nav-backdrop" id="navBackdrop"></div>
 
     <main>
         <!-- Hero Section -->
         <section class="s1">
-            <div class="left-s1">
+            <div class="s1-box">
+                <div class="left-s1">
                 <span class="available">Available for work</span>
                 <h4>Hi, I'm <span class="me">Ahravela</span></h4>
                 <p class="pls1">Licensed ECE  & ECT &#183 AI, IoT & Web Developer &#183 Network Engineer</p>
@@ -35,6 +59,8 @@
             <div class="right-s1">
                 <img src="https://i.ibb.co/qbbdmfT/Picsart-25-04-28-18-04-33-724.jpg" alt="Profile Picture">
             </div>
+            </div>
+            
         </section>
 
         <!-- About Section -->
@@ -44,10 +70,9 @@
 My undergraduate thesis was a Raspberry Pi based medicine dispensing system with RFID authentication, built for our university clinic. Since then I've focused on combining electronics with software, including training and deploying a TensorFlow image classification model to production and building IoT dashboards that connect embedded sensors to live web interfaces. I've also worked through real deployment challenges like Docker configuration, memory optimization, and dependency conflicts to get projects running reliably in production.
 I'm currently expanding into AI/data engineering and network engineering (MikroTik certified, with working knowledge of Cisco), and I'm open to remote, onsite, or hybrid roles where I can keep building things end to end.</p>
             <ul class="about-stats">
-                <li>🎓 2024 BS ECE Graduate</li>
-                <li>📜 Licensed Engineer</li>
-                <li>🏅 3+ Certifications</li>
-                <li>🔧 IoT HW + SW Projects</li>
+                <li>🎓 2024 BS Electronics Engineering Graduate</li>
+                <li>📜 Licensed Electronics Engineer, Electronics Technician, and Mikrotik Certified Network Associate</li>
+                
             </ul>
         </section>
 
@@ -59,7 +84,7 @@ I'm currently expanding into AI/data engineering and network engineering (MikroT
                 <div class="bar"><div class="fill" style="width:60%"></div></div>
             </div>
             <div class="skill">
-                <span>Programming & Web: Python, JavaScript, HTML/CSS, C#, Flask, MicroPython, REST APIs</span>
+                <span>Programming & Web: Python, JavaScript, HTML/CSS, C++, C#, Flask, MicroPython, REST APIs</span>
                 <div class="bar"><div class="fill" style="width:70%"></div></div>
             </div>
             <div class="skill">
@@ -87,7 +112,7 @@ I'm currently expanding into AI/data engineering and network engineering (MikroT
                         <span class="tags">Flask • Python • Groq • Tavily</span>
                     </div>
                 </a>
-                <img src="https://i.ibb.co/1YDL4Yxy/traffic.png" alt="">
+                <img src="https://i.ibb.co/1fS96Rwx/mika.png" alt="">
             </div>
             <div class="project-card">
                 <a href="https://traffic-sign-classifier-1-qypn.onrender.com/" class="click">
@@ -150,6 +175,31 @@ I'm currently expanding into AI/data engineering and network engineering (MikroT
             <h3>Tools & Technologies</h3>
             <div class="track-wrapper">
                 <div class="track" id="toolTrack"></div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="section-cert">
+            <h3>Certifications</h3>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <img class="cert-logo" src="https://via.placeholder.com/64" alt="Certification logo">
+                    <h4>Certification Name</h4>
+                    <p class="cert-org">Issuing Organization</p>
+                    <p class="cert-date">Month Year</p>
+                </div>
+                <div class="cert-card">
+                    <img class="cert-logo" src="https://via.placeholder.com/64" alt="Certification logo">
+                    <h4>Certification Name</h4>
+                    <p class="cert-org">Issuing Organization</p>
+                    <p class="cert-date">Month Year</p>
+                </div>
+                <div class="cert-card">
+                    <img class="cert-logo" src="https://via.placeholder.com/64" alt="Certification logo">
+                    <h4>Certification Name</h4>
+                    <p class="cert-org">Issuing Organization</p>
+                    <p class="cert-date">Month Year</p>
+                </div>
             </div>
         </section>
 

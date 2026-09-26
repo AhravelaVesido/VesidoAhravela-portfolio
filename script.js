@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
 
 // Buttons
@@ -56,4 +55,96 @@ document.addEventListener("DOMContentLoaded", () => {
     chip.innerHTML = `<span class="dot" style="background-color:${t.color}"></span>${t.name}`;
     track.appendChild(chip);
   });
+
+// Welcome popup (shows on every page load/refresh)
+  const welcomeModal = document.getElementById("welcomeModal");
+  const modalClose = document.getElementById("modalClose");
+  const modalCta = document.getElementById("modalCta");
+
+  function closeWelcomeModal() {
+    if (welcomeModal) welcomeModal.classList.remove("show");
+  }
+
+  if (welcomeModal) {
+    setTimeout(() => {
+      welcomeModal.classList.add("show");
+    }, 600);
+  }
+
+  if (modalClose) modalClose.addEventListener("click", closeWelcomeModal);
+  if (modalCta) modalCta.addEventListener("click", closeWelcomeModal);
+
+  if (welcomeModal) {
+    welcomeModal.addEventListener("click", (e) => {
+      if (e.target === welcomeModal) closeWelcomeModal();
+    });
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeWelcomeModal();
+  });
+
+// Hero pin + fade-on-scroll effect
+  const header = document.querySelector("header");
+  const hero = document.querySelector(".s1");
+
+  function setHeroStickyOffset() {
+    if (!header || !hero) return;
+    // Pin the hero right below the sticky header instead of behind it
+    hero.style.top = header.offsetHeight + "px";
+  }
+
+  function updateHeroFade() {
+    if (!hero) return;
+    const heroHeight = hero.offsetHeight || 1;
+    const scrollY = window.scrollY || window.pageYOffset;
+    const progress = Math.min(Math.max(scrollY / heroHeight, 0), 1);
+    hero.style.opacity = 1 - progress;
+  }
+
+  setHeroStickyOffset();
+  updateHeroFade();
+
+  window.addEventListener("scroll", updateHeroFade, { passive: true });
+  window.addEventListener("resize", () => {
+    setHeroStickyOffset();
+    updateHeroFade();
+  });
+
+// Hamburger navigation (mobile + tablet)
+  const hamburgerBtn = document.getElementById("hamburgerBtn");
+  const navMenu = document.getElementById("navMenu");
+  const navBackdrop = document.getElementById("navBackdrop");
+  const navLinks = navMenu ? navMenu.querySelectorAll("a") : [];
+
+  function openNav() {
+    navMenu.classList.add("nav-open");
+    hamburgerBtn.classList.add("active");
+    navBackdrop.classList.add("show");
+    hamburgerBtn.setAttribute("aria-expanded", "true");
+  }
+
+  function closeNav() {
+    navMenu.classList.remove("nav-open");
+    hamburgerBtn.classList.remove("active");
+    navBackdrop.classList.remove("show");
+    hamburgerBtn.setAttribute("aria-expanded", "false");
+  }
+
+  if (hamburgerBtn && navMenu && navBackdrop) {
+    hamburgerBtn.addEventListener("click", () => {
+      const isOpen = navMenu.classList.contains("nav-open");
+      isOpen ? closeNav() : openNav();
+    });
+
+    navBackdrop.addEventListener("click", closeNav);
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", closeNav);
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 1024) closeNav();
+    });
+  }
 });
