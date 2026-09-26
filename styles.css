@@ -700,6 +700,7 @@ footer .socials a {
 @media (max-width: 1024px) {
   .hamburger {
     display: flex;
+    z-index: 10000;
   }
 
   .right {
@@ -719,7 +720,7 @@ footer .socials a {
     box-shadow: -6px 0 20px rgba(0, 0, 0, 0.4);
     transform: translateX(100%);
     transition: transform 0.3s ease;
-    z-index: 140;
+    z-index: 9999;
   }
 
   .right.nav-open {
@@ -729,12 +730,14 @@ footer .socials a {
   .right a {
     width: 100%;
     text-align: left;
+    position: relative;
+    z-index: 10001;
   }
 
   .nav-backdrop {
     display: block;
+    z-index: 9;
   }
-
 
   .s1 {
     flex-direction: column;
@@ -743,14 +746,13 @@ footer .socials a {
     padding: 30px 20px;
   }
 
-  .s1-box{
+  .s1-box {
     gap: 30px;
   }
 
-
   .right-s1 img {
     margin: 20px 0;
-    margin-right: 0; /* removes the 100px right margin */
+    margin-right: 0;
   }
 
   .buttons1 {
@@ -760,7 +762,7 @@ footer .socials a {
   }
 
   .left-s1 {
-    padding-left: 0; /* removes left offset when centered */
+    padding-left: 0;
   }
 }
 
